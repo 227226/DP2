@@ -53,12 +53,11 @@ for i in range(len(data)):
             print('=========================================')
             print(i)
             print('gt:', EulerAngles(gt_matrix, 'zyx', 5))
+            print('pred:', EulerAngles(predicted_matrix, 'zyx', 5))
             print('pred:', EulerAngles(U@Vt, 'zyx', 5))
-            print('pred:', EulerAngles(Q, 'zyx', 5))
             print(gt_matrix)
             print(U @ Vt)
-            print(Q)
-            break
+            print((U @ Vt).T @ (U @ Vt))
 
 
 match selection:
